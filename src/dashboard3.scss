@@ -1,0 +1,206 @@
+
+// sass
+//Var
+//colors
+$base: #252525;
+$primary: #252525;
+$accent: #ffffff;
+$secondary: #a9a9a9;
+
+//mixins
+@mixin fhover($color) {
+  &:hover {
+    transition: 350ms ease-in-out;
+    color:  $color;
+    transform: scale(1.4);
+  }
+}
+  
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+   
+@mixin center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+@mixin align() {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// reset
+  
+footer {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  background: $base;
+  text-align: center;
+}
+  
+  .content {
+
+    border-radius: 5px;
+    @include flex;
+    //flex-direction: column;
+    justify-content: space-evenly;
+    //background-color: $primary;
+    height: 80px;
+    .bottom {
+      padding: 0;
+      margin: 0;
+      top: 10%;
+      
+      .beat {
+        color: red;
+        animation: beat .30s infinite alternate;
+      }
+    }
+
+     .top {
+       font-size: 25px;
+       .fa-twitter {
+         @include fhover(#55acee);
+       }
+       .fa-youtube {
+         @include fhover(#cd201f);
+       }
+       .fa-instagram {
+         @include fhover(#e4405f);
+       }
+       .fa-codepen {
+         @include fhover(#FFDD40);
+       }
+
+      .custom-icon {
+        padding: 10px;
+        transition: 500ms ease-in-out;
+      }
+
+     }
+  }
+
+
+.noselect {
+  user-select: none
+}
+
+.artboard {
+
+  .cards {
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+
+    .card {
+      min-width: calc(25%);
+      min-height: 100%;
+      text-align: center;
+      background-size: content;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      //transition: all 500ms;
+      transition: 500ms cubic-bezier(1,.02,0,.98);
+      vertical-align: middle;
+
+      a {
+        font-family: 'Satisfy', cursive;
+        font-size: 60px;
+        text-transform: capitalize;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transition: 250ms cubic-bezier(1,.02,0,.98);
+      }
+    }
+  }
+}
+
+
+//animation
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+
+    .artboard {
+
+      .cards {
+        text-align: center;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+
+        .card {
+          min-width: calc(25%);
+          min-height: 100%;
+          text-align: center;
+          background-size: content;
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+          //transition: all 500ms;
+          transition: 500ms cubic-bezier(1,.02,0,.98);
+          vertical-align: middle;
+
+          a {
+            font-family: 'Satisfy', cursive;
+            font-size: 60px;
+            text-transform: capitalize;
+            vertical-align: middle;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transition: 250ms cubic-bezier(1,.02,0,.98);
+          }
+        }
+      }
+    }
+  }
+}
+
+.p1 {
+  background: url("https://images.unsplash.com/photo-1551326844-4df70f78d0e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1226&q=80");
+}
+
+.p2 {
+  background: url("https://images.unsplash.com/photo-1543965860-82ed7d542cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1342&q=80")
+}
+  
+.p3 {
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
+}
+.p4  {
+  background: url("https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80")
+}
+
+.open {
+  min-width: 100% !important;
+  a {
+    top: 100% !important
+  }
+}
+
+.close {
+  min-width: 0%!important;
+  a {
+    top: -50% !important;
+  }
+}
+
+.backdrop {
+  backdrop-filter: grayscale(0.5) opacity(0.8)
+}
